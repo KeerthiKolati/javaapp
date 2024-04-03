@@ -18,6 +18,10 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+
+    - name: Navigate to Dockerfile directory
+      run: cd javaapp/docker-file
+      #working-directory: ${{ github.workspace }}  # Specify the workspace directory
  
     - name: Build Docker image
       run: docker build -t keerthikolati/my-java-app:v1.0 .
