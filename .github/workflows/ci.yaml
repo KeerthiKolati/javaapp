@@ -12,7 +12,10 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
- 
+
+    - name: Navigate to Java code
+      run: cd javaapp/Main.java
+
     - name: Compile Java code
       run: javac Main.java
  
