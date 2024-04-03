@@ -1,11 +1,14 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:11-jre-slim
+# Use official OpenJDK image as a base image
+FROM openjdk:11
  
 # Set the working directory in the container
-WORKDIR /usr/src/app
+WORKDIR /app
  
-# Copy the compiled Java application JAR file into the container at /usr/src/app
-COPY Main.class .
+# Copy the entire src folder to the container
+COPY src /app/src
  
-# Specify the command to run your application
-CMD ["java", "Main"]
+# Compile the Java code
+RUN javac src/Main.java
+ 
+# Command to run the Java application
+CMD ["java", "-classpath", "src", "Main"]
