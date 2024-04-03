@@ -17,7 +17,7 @@ jobs:
       run: javac Main.java
 
     - name: Clone repository
-      run: git clone https://github.com/Keerthikolatis/javaapp.git
+      run: git clone https://github.com/Keerthikolatis/javaapp
  
     - name: Build Docker image
       run: docker build -t java-app:latest javaapp
