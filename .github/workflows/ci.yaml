@@ -8,16 +8,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
- 
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
- 
+      
     - name: Compile Java code
       run: javac src/Main.java
- 
+      
     - name: Build Docker image
-      run: docker build -t my-java-app .
+      run: |
+        docker build -t my-java-app .
+        docker tag my-java-app keerthikolati/my-java-app
+        docker push keerthikolati/my-java-app
+      env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
  
     - name: Run Docker container
       run: docker run my-java-app
