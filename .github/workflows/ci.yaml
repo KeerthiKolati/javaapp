@@ -19,11 +19,6 @@ jobs:
     - name: Build Docker image
       run: |
         docker build -t my-java-app .
-        docker tag my-java-app keerthikolati/my-java-app
-        docker push keerthikolati/my-java-app
-      env:
-        DOCKER_PASSWORD: dckr_pat_WNAC2pxJKswhxkJ-Pm1sDgPH4U0
-        DOCKER_USERNAME: keerthikolati
  
     - name: Run Docker container
       run: docker run my-java-app
