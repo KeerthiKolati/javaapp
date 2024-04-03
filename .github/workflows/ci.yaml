@@ -1,4 +1,4 @@
-name: Java CI
+name: Java CI with Docker
  
 on:
   push:
@@ -6,25 +6,20 @@ on:
       - main
  
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
  
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
  
-    - name: Set up JDK
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'adopt'
-
-    - name: Navigate to Dockerfile directory
-      run: cd javaapp/docker-file
-      #working-directory: ${{ github.workspace }}  # Specify the workspace directory
+    - name: Compile Java code
+      run: javac Main.java
  
     - name: Build Docker image
-      run: docker build -t keerthikolati/my-java-app:v1.0 .
+      run: |
+        docker build -t keerthikolati/java-app:latest .
+        docker tag your_dockerhub_username/java-app:latest your_dockerhub_username/java-app:${{ github.sha }}
  
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
@@ -34,4 +29,5 @@ jobs:
  
     - name: Push Docker image
       run: |
-        docker push keerthikolati/my-java-app:v1.0
+        docker push keerthikolati/java-app:latest
+        docker push keerthikolati/java-app:${{ github.sha }}
