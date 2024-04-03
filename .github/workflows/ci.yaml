@@ -15,4 +15,8 @@ jobs:
  
     - name: Compile Java code
       run: javac Main.java
+      
+    - name: Build Docker image
+      run: |
+         docker build -t java-app:latest .
  
