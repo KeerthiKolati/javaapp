@@ -24,7 +24,7 @@ jobs:
       run: docker login -u keerthikolati -p dckr_pat_WNAC2pxJKswhxkJ-Pm1sDgPH4U0
       
     - name: Push Docker image to Docker Hub
-      run: docker push my-java-app:latest
+      run: docker push keerthikolati/my-java-app:latest
  
     - name: Run Docker container
       run: docker run my-java-app
