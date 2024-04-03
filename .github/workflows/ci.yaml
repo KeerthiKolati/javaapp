@@ -16,21 +16,3 @@ jobs:
     - name: Compile Java code
       run: javac Main.java
  
-    - name: Navigate Dockerfile directory
-      run: cd docker-file
- 
-    - name: Build Docker image
-      run: |
-        docker build -t keerthikolati/java-app:latest .
-        docker tag keerthikolati/java-app:latest keerthikolati/java-app:${{ github.sha }}
- 
-    - name: Log in to Docker Hub
-      uses: docker/login-action@v2
-      with:
-        username: keerthikolati
-        password: ${{ secrets.DOCKER_PASSWORD }}
- 
-    - name: Push Docker image
-      run: |
-        docker push keerthikolati/java-app:latest
-        docker push keerthikolati/java-app:${{ github.sha }}
