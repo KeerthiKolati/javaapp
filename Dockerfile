@@ -5,7 +5,7 @@ FROM openjdk:11-jre-slim
 WORKDIR /usr/src/app
  
 # Copy the compiled Java application JAR file into the container at /usr/src/app
-COPY Main.class ./
+COPY Main.class .
  
 # Specify the command to run your application
 CMD ["java", "Main"]
