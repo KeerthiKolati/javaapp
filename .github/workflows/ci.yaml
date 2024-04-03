@@ -15,7 +15,10 @@ jobs:
 
     - name: Compile Java code
       run: javac src/Main.java
- 
+
+    - name: Run Java Application
+      run: java -cp src Main
+      
     - name: Run tests
       run: |
         java Main
