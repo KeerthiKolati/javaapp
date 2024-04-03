@@ -18,7 +18,7 @@ jobs:
       
     - name: Build Docker image
       run: |
-        docker build -t my-java-app .
+        docker build -t keerthikolati/my-java-app:latest .
 
     - name: Log in to Docker Hub
       run: docker login -u keerthikolati -p dckr_pat_WNAC2pxJKswhxkJ-Pm1sDgPH4U0
