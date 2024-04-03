@@ -15,11 +15,14 @@ jobs:
  
     - name: Compile Java code
       run: javac Main.java
+
+    - name: Navigate Docker File 
+      run: cd javaapp/blob/main/docker-file
  
     - name: Build Docker image
       run: |
         docker build -t keerthikolati/java-app:latest .
-        docker tag your_dockerhub_username/java-app:latest your_dockerhub_username/java-app:${{ github.sha }}
+        docker tag keerthikolati/java-app:latest your_dockerhub_username/java-app:${{ github.sha }}
  
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
