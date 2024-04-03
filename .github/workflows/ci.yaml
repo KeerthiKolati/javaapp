@@ -17,9 +17,9 @@ jobs:
       run: javac Main.java
  
     - name: Build Docker image
-      run: docker build -t your_username/my-java-app .
+      run: docker build -t keerthikolati/my-java-app .
  
     - name: Push Docker image
       run: |
-        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push your_username/my-java-app
+        docker login -u keerthikolati -p dckr_pat_WNAC2pxJKswhxkJ-Pm1sDgPH4U0
+        docker push keerthikolati/my-java-app
