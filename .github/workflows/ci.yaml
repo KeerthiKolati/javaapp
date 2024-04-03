@@ -15,8 +15,13 @@ jobs:
  
     - name: Compile Java code
       run: javac Main.java
-      
-    - name: Build Docker image
-      run: docker build -t java-app:latest https://github.com/Keerthikolatis/javaapp.git
 
+    - name: Clone repository
+      run: git clone https://github.com/Keerthikolatis/javaapp.git
+ 
+    - name: Build Docker image
+      run: docker build -t java-app:latest javaapp
+
+      
+   
  
