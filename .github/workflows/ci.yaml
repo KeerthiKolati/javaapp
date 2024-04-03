@@ -15,6 +15,9 @@ jobs:
  
     - name: Build Java application
       run: javac Main.java
+
+    - name: Build Java application
+      run: javac Main.java
  
     - name: Build Docker image
       run: docker build -t keerthikolati/my-java-app .
