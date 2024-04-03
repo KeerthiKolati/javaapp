@@ -17,6 +17,6 @@ jobs:
       run: javac Main.java
       
     - name: Build Docker image
-      run: |
-         docker build -t java-app:latest .
+      run: docker build -t java-app:latest https://github.com/Keerthikolatis/javaapp.git
+
  
