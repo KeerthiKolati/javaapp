@@ -1,14 +1,14 @@
-# Use official OpenJDK image as a base image
-FROM openjdk:11
+# Use the latest OpenJDK 17 image as the base
+FROM adoptopenjdk/openjdk17:alpine
  
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
  
-# Copy the entire src folder to the container
-COPY src /app/src
+# Copy the packaged JAR file from the Maven build stage
+COPY target/*.jar app.jar
  
-# Compile the Java code
-RUN javac src/Main.java
+# Expose the port on which your Java application will run
+EXPOSE 8080
  
 # Command to run the Java application
-CMD ["java", "-classpath", "src", "Main"]
+CMD ["java", "-jar", "app.jar"]
