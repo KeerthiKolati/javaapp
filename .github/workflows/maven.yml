@@ -35,4 +35,4 @@ jobs:
           password: dckr_pat_WNAC2pxJKswhxkJ-Pm1sDgPH4U0
 
       - name: Push Docker image to registry
-        run: docker push keerthikolati/my-javaapp
+        run: docker push keerthikolati/my-javaapp:latest
