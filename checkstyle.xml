@@ -1,18 +1,23 @@
 <?xml version="1.0"?>
 <!DOCTYPE module PUBLIC
-    "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
     "https://checkstyle.org/dtds/configuration_1_3.dtd">
  
 <module name="Checker">
     <property name="charset" value="UTF-8"/>
  
-    <!-- Configuration for specific checks -->
-    <module name="JavadocMethod">
-        <!-- Customize JavadocMethod check as needed -->
-        <!-- For example: enforce Javadoc for all methods -->
-        <property name="scope" value="public"/>
-        <property name="allowMissingJavadoc" value="false"/>
+    <!-- Ensure there are no tab characters in source files -->
+    <module name="FileTabCharacter">
+        <property name="eachLine" value="true"/>
     </module>
  
-    <!-- Additional modules can be added as needed -->
+    <!-- Ensure there is a newline at the end of each file -->
+    <module name="NewlineAtEndOfFile"/>
+ 
+    <!-- Check for whitespace issues (e.g., unnecessary spaces, trailing spaces) -->
+    <module name="NoWhitespaceBefore"/>
+    <module name="NoWhitespaceAfter"/>
+    <module name="NoTrailingWhitespace"/>
+ 
+    <!-- Additional checks can be added or removed based on your project's requirements -->
 </module>
