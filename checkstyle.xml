@@ -7,16 +7,20 @@
     <!-- Specify Checkstyle rules here -->
  
     <!-- Configure indentation checks -->
-    <module name="Indentation">
-        <property name="basicOffset" value="4"/>
-        <property name="braceAdjustment" value="0"/>
-        <property name="caseIndent" value="4"/>
+    <module name="Checker">
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+            <property name="braceAdjustment" value="0"/>
+            <property name="caseIndent" value="4"/>
+        </module>
     </module>
  
     <!-- Configure line length check -->
-    <module name="LineLength">
-        <property name="max" value="120"/>
-        <property name="ignorePattern" value="^import\s.*"/>
+    <module name="Checker">
+        <module name="LineLength">
+            <property name="max" value="120"/>
+            <property name="ignorePattern" value="^import\s.*"/>
+        </module>
     </module>
  
     <!-- Add more Checkstyle rules here -->
