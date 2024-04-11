@@ -19,14 +19,12 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-        env:
-          JAVA_HOME: ${{ env.JAVA_HOME }}
  
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
       - name: Run Checkstyle
-        run: mvn checkstyle:check
+        run: mvn checkstyle:check --file pom.xml
  
       - name: Build Docker image
         run: |
