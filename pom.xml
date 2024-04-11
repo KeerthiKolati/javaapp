@@ -1,26 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd"> 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>your-project-name</artifactId>
     <version>1.0-SNAPSHOT</version>
- 
+    
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
- 
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.0</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
- 
+    
     <build>
         <plugins>
             <!-- Maven Compiler Plugin -->
@@ -33,8 +25,8 @@
                     <target>17</target>
                 </configuration>
             </plugin>
- 
-            <!-- Checkstyle Plugin -->
+            
+            <!-- Maven Checkstyle Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -55,7 +47,9 @@
                     <failsOnError>true</failsOnError>
                 </configuration>
             </plugin>
+            
+            <!-- Additional plugins can be added as needed -->
         </plugins>
     </build>
- 
+    
 </project>
