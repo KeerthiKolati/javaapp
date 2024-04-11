@@ -1,4 +1,3 @@
-
 package com.acme.module1;
 
 public class Module1 {
