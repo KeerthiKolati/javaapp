@@ -22,6 +22,11 @@ jobs:
  
       - name: Build with Maven
         run: mvn -B package --file pom.xml
+
+      - name: Unit test
+        run: |
+          cd ./
+          eval mvn test
         
       - name: Build Docker image
         run: |
